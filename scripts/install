@@ -100,11 +100,7 @@ pushd $final_path
 	HOME=$(pwd)
 	ynh_use_nodejs
 	ynh_npm install 
-	if [[ -v TMP_HOME ]] ; then 
-	  HOME=$TMP_HOME
-	else
-	  unset HOME
-	fi
+	[[ -v TMP_HOME ]] && HOME=$TMP_HOME || unset HOME
 popd
 
 #=================================================
