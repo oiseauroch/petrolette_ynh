@@ -96,7 +96,7 @@ ynh_script_progression --message="Installing application using node..."
 
 pushd $final_path
 # use custom home value to avoid bower storing values in root and have right errors
-	[[ -v HOME ]]  TMP_HOME=$HOME
+	[[ -v HOME ]] && TMP_HOME=$HOME
 	HOME=$(pwd)
 	ynh_use_nodejs
 	ynh_npm install 
